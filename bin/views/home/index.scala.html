@@ -1,4 +1,5 @@
-@layouts.blank("Bienvenido", "login/index.css") {
+@(labels: Map[String, String], csss: Array[String], jss: Array[String])
+@layouts.blank(labels, csss, jss) {
 	<div class="container content">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -33,4 +34,5 @@
 				</div>
 			</div><!--/row-->
 		</div>
+
 }

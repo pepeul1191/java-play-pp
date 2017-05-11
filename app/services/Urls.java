@@ -14,7 +14,8 @@ public final class Urls {
 	
 	public static String getUrlServicio(String servicio){
 		Map<String, String> urlServicios = new HashMap<String, String>();
-		urlServicios.put("accesos", "");
+		urlServicios.put("cipher", "http://localhost/cipher/");
+		urlServicios.put("accesos", "http://localhost/accesos/");
 		
 		return urlServicios.get(servicio);
 	}
