@@ -22,18 +22,18 @@ public class HelperView {
 			}
 		}
 		
+		return rpta;		
+	}
+	
+	public static String menuModulos(String nombreModulo){
+		String rpta = "";
+		
 		return rpta;
+	}
+	
+	public static String menuSubmodulos(String nombreModulo){
+		String rpta = "";
 		
-		/*
-		 $rpta = '';
-
-        foreach ($array_js as &$js) {
-            $temp = '<script src="' . Url::statics() . $js . '.js" type="text/javascript"></script>';
-            $rpta = $rpta . $temp;
-        }
-
-        return $rpta;
-		 * */
-		
+		return rpta;
 	}
 }
