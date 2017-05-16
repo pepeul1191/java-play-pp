@@ -21,7 +21,6 @@ public class LoginController extends Controller {
         String[] jss = {"assets/login/js/index"};
                 
     	return ok(views.html.login.index.render(titulo, csss, jss, labels, mensaje));
-    	//return ok(index.render("Your new application is ready???."));
     }
     
     public Result acceder() {

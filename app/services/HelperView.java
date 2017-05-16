@@ -59,8 +59,36 @@ public class HelperView {
 		return rpta;
 	}
 	
-	public static String menuSubmodulos(String nombreModulo){
-		String rpta = "";
+	public static String menuSubModulos(String nombreModulo){
+		String rpta = "<ul class='list-group sidebar-nav-v1' id='sidebar-nav'>";
+		String url = Urls.getUrlServicio("accesos") + "item/listar/menu/?sistema=" + getNombreApp() + "&nombre_modulo=" + nombreModulo;
+		System.out.println(url);
+		Httparty httparty = new Httparty(url, "GET");
+		httparty.action();
+		
+		JsonParser parser = new JsonParser();
+		JsonElement menusElement = parser.parse(httparty.getRpta());
+		JsonArray menus = menusElement .getAsJsonArray();
+		
+		for(JsonElement menu : menus){
+			JsonObject menuJsonObject = menu.getAsJsonObject();
+			
+			rpta = rpta + "<li class='list-group-item list-toggle'><span>" + menuJsonObject.get("subtitulo").getAsString() +"</span>";
+			rpta = rpta + "<ul id='collapse-forms' class='collapse in' aria-expanded='true'>";
+			
+			JsonArray itemsArray = menuJsonObject.get("items").getAsJsonArray();
+			
+			for(JsonElement item : itemsArray){
+				JsonObject itemJsonObject = item.getAsJsonObject();
+				
+				//$rpta = $rpta . '<li><a href="' . Url::base_url() . $item->{'url'} . '">' . $item->{'item'} . '</a></li>';
+				rpta = rpta + "<li><a href='" + Urls.getBaseURL() +itemJsonObject.get("url").getAsString() + "'>" + itemJsonObject.get("item").getAsString() + "</a></li>";
+			}
+			
+			rpta = rpta + "</ul>";
+		}
+		
+		rpta = rpta + "</ul>";
 		
 		return rpta;
 	}

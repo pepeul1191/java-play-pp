@@ -7,6 +7,14 @@ POST 	/login/acceder															controllers.LoginController.acceder
 
 GET     /                           														controllers.HomeController.index
 
+#accesos
+GET     /accesos               														controllers.accesos.UsuarioController.index
+#accesos/usuario
+GET		/accesos/usuarios													controllers.accesos.UsuarioController.index
+GET		/accesos/usuario/listar											controllers.accesos.UsuarioController.listar
+GET		/accesos/usuario/ver_accesos								controllers.accesos.UsuarioController.verAccesos
+GET		/accesos/usuario/listar_accesos/:usuarioId		controllers.accesos.UsuarioController.listarAccesos(usuarioId: Long)
+
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code

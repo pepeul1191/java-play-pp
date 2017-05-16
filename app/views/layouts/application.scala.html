@@ -86,11 +86,16 @@
 		    </div>
 		     <!-- Fin Breadcrumbs -->  
 		        <div class="container content">
-		            <div class="col-md-12" id="workspace">
-		              <!-- Inicio Yield-->
-		              @content
-		              <!-- Fin Yield-->
-		            </div>
+		            <div class="container content">
+			            <div class="col-md-3" id="menu-side">
+			              @Html(HelperView.menuSubModulos(labels.get("nombreModulo")))
+			            </div>
+			            <div class="col-md-9" id="workspace">
+			                <!-- Inicio Yield-->
+			              @content
+			              <!-- Fin Yield-->
+			            </div>
+			        </div>
 		        </div>
 		        <div class="footer-v1" >
 		        <div class="footer">
