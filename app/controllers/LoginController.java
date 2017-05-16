@@ -61,4 +61,9 @@ public class LoginController extends Controller {
     	
     	return ok(rpta).as("text/html; charset=iso-8859-1");
     }
+    
+    public Result salir(){
+    	session().clear();
+    	return redirect(Urls.getBaseURL() + "login");
+    }
 }
