@@ -9,6 +9,10 @@ GET     /                           														controllers.HomeController.ind
 
 #accesos
 GET     /accesos               														controllers.accesos.UsuarioController.index
+#accesos/sistema
+GET	/accesos/sistemas														controllers.accesos.SistemaController.index
+GET 	/accesos/sistema/listar											controllers.accesos.SistemaController.listar
+POST	/accesos/sistema/guardar										controllers.accesos.SistemaController.guardar
 #accesos/usuario
 GET		/accesos/usuarios													controllers.accesos.UsuarioController.index
 GET		/accesos/usuario/listar											controllers.accesos.UsuarioController.listar
