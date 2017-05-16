@@ -1,0 +1,17 @@
+@(tituloModal: String, csssModal: Array[String], jssModal: Array[String])
+@layouts.modal_large(tituloModal, csssModal, jssModal){
+<div class="modal-body" style="padding-bottom: 15px;">
+	<div class="row">
+		<div class="col-md-7 workspace">
+			<label class="texto-der oculto" id="txtMensajeRptaModal"></label>
+			<label class="oculto" id="id_rol"></label>
+			<h5 class="subtitulo" style="margin-bottom:15px">Permisos del Usuario</h5>
+			<table class="list issues" style="" id="tablaPermisos"></table>
+		</div>
+		<div class="col-md-5 workspace">
+			<h5 class="subtitulo" style="margin-bottom:15px">Roles del Usuario</h5>
+			<table class="list issues" style="" id="tablaRoles"></table>
+		</div>
+	</div>
+</div>
+}

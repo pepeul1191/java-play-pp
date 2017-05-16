@@ -52,4 +52,36 @@ public class UsuarioController extends Controller {
 		
     	return ok(httparty.getRpta()).as("text/html; charset=iso-8859-1");
     }
+    
+    public Result verRolesPermisos(){
+    	String tituloModal = "Gestione los Roles y Permisos del Usuario";
+    	String[] csssModal= {""};
+        String[] jssModal = {"assets/accesos/usuarios/js/roles_permisos"};
+                
+    	return ok(views.html.accesos.usuario.roles_permisos.render(tituloModal, csssModal, jssModal));
+    }
+    
+    public Result listarRoles(Long usuarioId){
+    	String url = Urls.getUrlServicio("accesos") + "usuario/listar_permisos/" + usuarioId;
+		Httparty httparty = new Httparty(url, "GET");
+		httparty.action();
+		
+    	return ok(httparty.getRpta()).as("text/html; charset=iso-8859-1");
+    }
+    
+    public Result listarPermisos(Long usuarioId){
+    	String url = Urls.getUrlServicio("accesos") + "usuario/listar_roles/" + usuarioId;
+		Httparty httparty = new Httparty(url, "GET");
+		httparty.action();
+		
+    	return ok(httparty.getRpta()).as("text/html; charset=iso-8859-1");
+    }
+    
+    /*public Result asociarPermisos(){
+    	
+    }
+    
+    public Result asociarRoles(){
+    	
+    }*/
 }

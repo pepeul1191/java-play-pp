@@ -1,0 +1,20 @@
+@(tittuloModal: String, csssModal: Array[String], jssModal: Array[String])(content: Html)
+@import services.Urls
+@import services.HelperView
+
+ <!-- Inicio CSS Modal-->
+@Html(HelperView.loadCSS(csssModal))
+<!-- Fin CSS Modal -->
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">@tittuloModal</h4>
+      </div>
+        <!-- Inicio Yield Modal-->
+        @content
+        <!-- Fin Yield Modal-->
+    </div>
+</div>
+<!-- Inicio JS Modal-->
+@Html(HelperView.loadJS(jssModal))

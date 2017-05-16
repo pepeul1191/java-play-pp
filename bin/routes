@@ -14,6 +14,11 @@ GET		/accesos/usuarios													controllers.accesos.UsuarioController.index
 GET		/accesos/usuario/listar											controllers.accesos.UsuarioController.listar
 GET		/accesos/usuario/ver_accesos								controllers.accesos.UsuarioController.verAccesos
 GET		/accesos/usuario/listar_accesos/:usuarioId		controllers.accesos.UsuarioController.listarAccesos(usuarioId: Long)
+GET 	/accesos/usuario/ver_roles_permisos					controllers.accesos.UsuarioController.verRolesPermisos
+GET 	/accesos/usuario/listar_permisos/:usuarioId			controllers.accesos.UsuarioController.listarRoles(usuarioId: Long)
+GET  	/accesos/usuario/listar_roles/:usuarioId					controllers.accesos.UsuarioController.listarPermisos(usuarioId: Long)
+#POST /accesos/usuario/asociar_permisos						controllers.accesos.UsuarioController.asociarPermisos
+#POST /accesos/usuario/asociar_roles								controllers.accesos.UsuarioController.asociarRoles
 
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
