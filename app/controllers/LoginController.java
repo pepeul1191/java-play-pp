@@ -1,5 +1,8 @@
 package controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +37,13 @@ public class LoginController extends Controller {
 		httparty.action();
 		 		 
 		if(httparty.getRpta().equalsIgnoreCase("1")){
-			//ok("HOME").as("text/html");
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			Date date = new Date();
+			
+			session("autenticado", String.valueOf(true));
+			session("usuario", usuario);
+			session("tiempo", date.toString());
+						
 			return redirect(Urls.getBaseURL());
 		}else{
 			labels.put("mensaje", "1");
@@ -45,5 +54,11 @@ public class LoginController extends Controller {
 	                
 	    	return ok(views.html.login.index.render(titulo, csss, jss, labels, mensaje));
 		}
+    }
+    
+    public Result ver(){
+    	String rpta = "usuario : " + session("usuario") + "</br> estado : " + session("autenticado") + "</br>tiempo : " + session("tiempo") ;
+    	
+    	return ok(rpta).as("text/html; charset=iso-8859-1");
     }
 }

@@ -19,6 +19,7 @@ public class HomeController extends Controller {
         String titulo = "Home";
         String[] csss = {"assets/login/css/index"};
         String[] jss = {"assets/login/js/index"};
+                
     	return ok(views.html.home.index.render(titulo, csss, jss, labels));
     }
 

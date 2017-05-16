@@ -4,6 +4,7 @@
 
 GET     /login																			controllers.LoginController.index
 POST 	/login/acceder															controllers.LoginController.acceder
+GET 	/login/ver																	controllers.LoginController.ver
 
 GET     /                           														controllers.HomeController.index
 
