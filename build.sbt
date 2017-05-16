@@ -9,3 +9,5 @@ scalaVersion := "2.11.8"
 libraryDependencies += javaJdbc
 libraryDependencies += cache
 libraryDependencies += javaWs
+
+libraryDependencies += "com.google.code.gson" % "gson" % "2.8.0"

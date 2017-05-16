@@ -35,7 +35,8 @@ public class LoginController extends Controller {
 		httparty.action();
 		 		 
 		if(httparty.getRpta().equalsIgnoreCase("1")){
-			return ok("HOME").as("text/html");
+			//ok("HOME").as("text/html");
+			return redirect(Urls.getBaseURL());
 		}else{
 			labels.put("mensaje", "1");
 	        boolean mensaje = true;

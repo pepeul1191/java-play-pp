@@ -12,9 +12,11 @@ public class HomeController extends Controller {
 
     public Result index() {
     	Map<String, String> labels = new HashMap<String, String>();
-        labels.put("titulo", "Bienvenido");
+        labels.put("titulo", "Home");
+        labels.put("tituloSitio", "Home =P");
+        labels.put("nombreModulo", "");
         
-        String titulo = "Bienvenido";
+        String titulo = "Home";
         String[] csss = {"assets/login/css/index"};
         String[] jss = {"assets/login/js/index"};
                 
