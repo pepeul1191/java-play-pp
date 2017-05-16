@@ -16,9 +16,9 @@ POST	/accesos/item/guardar/											controllers.accesos.ItemController.guardar
 GET		/accesos/modulo/listar/:sistemaId						controllers.accesos.ModuloController.listar(sistemaId: Long)
 POST	/accesos/modulo/guardar										controllers.accesos.ModuloController.guardar
 #accesos/permiso
-GET		/accesos/permiso/listar/:sistemaId  								controllers.accesos.PermisoController.listar(sistemaId: Long)
-GET		/accesos/permiso/listar_asociados/:sistemaId/:rolId'  	controllers.accesos.PermisoController.listarAsociados(sistemaId: Long, rolId: Long)
-POST	/accesos/permiso/guardar 												controllers.accesos.PermisoController.guardar
+GET		/accesos/permiso/listar/:sistemaId  									controllers.accesos.PermisoController.listar(sistemaId: Long)
+GET		/accesos/permiso/listar_asociados/$sistemaId<[0-9]+>/$rolId<[0-9]+>'  		controllers.accesos.PermisoController.listarAsociados(sistemaId: Long,rolId: Long)
+POST	/accesos/permiso/guardar 													controllers.accesos.PermisoController.guardar
 #accesos/rol
 GET		/accesos/rol/listar/:sistemaId 								controllers.accesos.RolController.listar(sistemaId: Long)
 POST	/accesos/rol/guardar 												controllers.accesos.RolController.guardar
