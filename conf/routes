@@ -13,6 +13,9 @@ GET     /accesos               														controllers.accesos.UsuarioControll
 GET	/accesos/sistemas														controllers.accesos.SistemaController.index
 GET 	/accesos/sistema/listar											controllers.accesos.SistemaController.listar
 POST	/accesos/sistema/guardar										controllers.accesos.SistemaController.guardar
+GET		/accesos/sistema/ver_menu									controllers.accesos.SistemaController.verMenuModal
+GET		/accesos/sistema/ver_permisos							controllers.accesos.SistemaController.verPermisoModal
+GET		/accesos/sistema/ver_roles									controllers.accesos.SistemaController.verRolModal
 #accesos/usuario
 GET		/accesos/usuarios													controllers.accesos.UsuarioController.index
 GET		/accesos/usuario/listar											controllers.accesos.UsuarioController.listar

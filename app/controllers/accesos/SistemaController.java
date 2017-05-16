@@ -48,4 +48,28 @@ public class SistemaController extends Controller {
     	
     	return ok(httparty.getRpta()).as("text/html; charset=iso-8859-1");
     }
+    
+    public Result verMenuModal(){
+    	String tituloModal = "Gestione el Menú del Sistema";
+    	String[] csssModal= {""};
+        String[] jssModal = {"assets/accesos/sistema/js/menu"};
+                
+    	return ok(views.html.accesos.sistema.menu.render(tituloModal, csssModal, jssModal));
+    }
+    
+    public Result verPermisoModal(){
+    	String tituloModal = "Gestione los Permisos del Sistema";
+    	String[] csssModal= {""};
+        String[] jssModal = {"assets/accesos/sistema/js/permiso"};
+                
+    	return ok(views.html.accesos.sistema.permiso.render(tituloModal, csssModal, jssModal));
+    }
+    
+    public Result verRolModal(){
+    	String tituloModal = "Gestione los Roles del Sistema";
+    	String[] csssModal= {""};
+        String[] jssModal = {"assets/accesos/sistema/js/rol"};
+                
+    	return ok(views.html.accesos.sistema.rol.render(tituloModal, csssModal, jssModal));
+    }
 }
